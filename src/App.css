@@ -55,14 +55,13 @@
 #CompanySocials {
   margin: 0 5vw 0 0;
 }
-#GoogleIcon{
+#FacebookIcon{
   margin: 0 25px 0 0;
+  cursor: pointer;
 }
 #InstagramIcon{
   margin: 0 25px 0 0;
-}
-#GoogleIcon{
-  margin: 0 25px 0 0;
+  cursor: pointer;
 }
 #MiddleSection {
   margin: 2.5vh 2.5vw; 
@@ -101,4 +100,28 @@
 #CompanyEmail {
   margin-right: 5vw;
   font-size: 1.5rem;
+}
+@media only screen and (max-width: 450px) {
+  .SelectInput, #CompanyName, #CompanyEmail {
+    font-size: 1.25rem;
+  }
+  #FacebookIcon, #InstagramIcon {
+    margin-right: 20px;
+  }
+}
+@media only screen and (max-width: 325px) {
+  .SelectInput, #CompanyName, #CompanyEmail {
+    font-size: 1rem;
+  }
+  #FacebookIcon, #InstagramIcon {
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .SelectInput, #CompanyName, #CompanyEmail {
+    font-size: .875rem;
+  }
+  #FacebookIcon, #InstagramIcon {
+    margin-right: 12.5px;
+  }
 }

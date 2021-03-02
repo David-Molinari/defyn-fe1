@@ -3,6 +3,7 @@ import "./App.css";
 import AsyncSelect from "react-select/async";
 import ReactPlayer from "react-player";
 import Axios from "axios";
+import FacebookIcon from "./images/FacebookIcon.png";
 import InstagramIcon from "./images/InstagramIcon.png";
 import TwitterIcon from "./images/TwitterIcon.png";
 
@@ -20,13 +21,19 @@ function App() {
     Name: ""
   })
 
+  let url = window.location.href.slice((window.location.href.search("/") + 2), -1)
+
+  if (url == 'localhost:3000') {
+    url = 'energyti.me'
+  }
+
   useEffect(() => {
     getCompany();
   }, [])
 
   function getCompany() {
     Axios
-    .get(`http://localhost:5000/api/companies/saveti.me`)
+    .get(`http://localhost:5000/api/companies/${url}`)
     .then(res => {
         setCompany(res.data[0])
         getVideos(res.data[0])
@@ -50,7 +57,7 @@ function App() {
   function getOptions() {
     return (
       Axios
-        .get(`http://localhost:5000/api/misc/options/saveti.me`)
+        .get(`http://localhost:5000/api/misc/options/${url}`)
         .then(res => res.data)
         .catch(err => err)
     )
@@ -66,13 +73,9 @@ function App() {
       }
   }
 
-  console.log(company.Socials.slice(company.Socials.search("Instagram.com"), company.Socials.search(",")))
+  console.log(window.location.href.slice((window.location.href.search("/") + 2), -1))
   console.log(company.Socials.slice(company.Socials.search("Twitter.com")))
-  console.log(`https://
-    ${company.Socials.slice(
-      company.Socials.search("Instagram.com"), 
-      company.Socials.search(",")
-  )}`)
+  console.log(company.Socials.slice(company.Socials.search("Facebook.com"), company.Socials.search(",")))
 
   return (
     <div>
@@ -91,13 +94,19 @@ function App() {
         />
         <div id="CompanySocials">
           <a 
-            href={`https://${company.Socials.slice(company.Socials.search("Instagram.com"), company.Socials.search(","))}`}
+              href={`https://facebook.com/${company.Socials.slice(0, company.Socials.search("1"))}`}
+              target="_blank"
+            >
+            <img id="FacebookIcon" src={FacebookIcon} alt="Facebook Icon"/>
+          </a>
+          <a 
+            href={`https://instagram.com/${company.Socials.slice((company.Socials.search("1")+1), (company.Socials.search("2")))}`}
             target="_blank"
           >
             <img id="InstagramIcon" src={InstagramIcon} alt="Instagram Icon"/>
           </a>
           <a 
-            href={`https://${company.Socials.slice(company.Socials.search("Twitter.com"))}`}
+            href={`https://twitter.com/${company.Socials.slice((company.Socials.search("2")+1))}`}
             target="_blank"
           >
             <img id="TwitterIcon" src={TwitterIcon} alt="Twitter Icon"/>
