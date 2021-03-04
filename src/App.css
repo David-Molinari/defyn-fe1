@@ -141,8 +141,13 @@ iframe {
     height: 82.5vh !important;
   }
 }
-@media only screen and (max-width: 355px) {
+@media only screen and (max-width: 455px) {
   #AppContainer {
     height: 77.5vh !important;
+  }
+}
+@media only screen and (max-width: 355px) {
+  #AppContainer {
+    height: 72.5vh !important;
   }
 }
