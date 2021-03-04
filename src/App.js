@@ -19,6 +19,8 @@ export default function App() {
     Name: ""
   })
 
+  const [videoReady, setVideoReady] = useState(false)
+
   let url = window.location.href.slice(
     (window.location.href.search("/") + 2), -1
   )

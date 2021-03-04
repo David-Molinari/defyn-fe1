@@ -68,6 +68,21 @@
   max-width: 100% !important;
   position: absolute;
 }
+/* #NoVideoContainer {
+  display: none !important;
+} */
+/* #QuoteContainer {
+  height: 100%;
+  width: 100%;
+  max-height: 360px;
+  max-width: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#NoQuoteContainer {
+  display: none;
+} */
 iframe {
   top: 50%;
   transform: translateY(-50%);
@@ -87,9 +102,78 @@ iframe {
   margin: 0;
   font-size: 1.5rem;
 }
+#ContactContainer {
+  animation-duration: 2.5s;
+  animation-name: slidein-left;
+}
+@keyframes slidein-left {
+  from {
+    margin-left: 500%;
+    width: 500%;
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+#SelectInputContainer {
+  animation-duration: 2.5s;
+  animation-name: slidein-right;
+}
+@keyframes slidein-right {
+  from {
+    margin-right: 500%;
+    width: -500%;
+  }
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+iframe {
+  animation-name: makeFatter;
+  animation-duration: .1s;
+  animation-delay: -.5s;
+}
+@keyframes makeFatter {                                                             
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 655px) {
   #SelectInputContainer, #ContactContainer {
     width: 95vw !important;
     margin: 0 2.5vw !important;
   }
+  /* #ContactContainer {
+    animation-duration: 2.5s;
+    animation-name: slidein-left1;
+  }
+  @keyframes slidein-left1 {
+    from {
+      margin-left: 500%;
+      width: 500%;
+    }
+    to {
+      margin-left: 0%;
+      width: 95vw;
+    }
+  }
+  #SelectInputContainer {
+    animation-duration: 2.5s;
+    animation-name: slidein-right1;
+  }
+  @keyframes slidein-right1 {
+    from {
+      margin-right: 500%;
+      width: -500%;
+    }
+    to {
+      margin-right: 0%;
+      width: 95vw;
+    }
+  } */
 }
