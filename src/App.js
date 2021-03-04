@@ -33,7 +33,7 @@ export default function App() {
 
   function getCompany() {
     Axios
-    .get(`http://localhost:5000/api/companies/${url}`)
+    .get(`https://defyn-be.herokuapp.com/api/companies/${url}`)
     .then(res => {
         setCompany(res.data[0])
         getVideos(res.data[0])
@@ -44,7 +44,7 @@ export default function App() {
 
   function getVideos(comp) {
     Axios
-      .get(`http://localhost:5000/api/videos/${comp.id}`)
+      .get(`https://defyn-be.herokuapp.com/api/videos/${comp.id}`)
       .then(res => {
           setVideos(res.data)
           setVideoCurrent({
@@ -59,7 +59,7 @@ export default function App() {
   function getOptions() {
     return (
       Axios
-        .get(`http://localhost:5000/api/misc/options/${url}`)
+        .get(`https://defyn-be.herokuapp.com/api/misc/options/${url}`)
         .then(res => res.data)
         .catch(err => err)
     )
