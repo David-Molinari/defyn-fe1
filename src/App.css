@@ -91,6 +91,9 @@ iframe {
   -webkit-transform: translateY(-50%);
   -o-transform: translateY(-50%);
 }
+.player {
+  height: 100% !important;
+}
 #ContactContainer{
   width: 100%;
   max-width: 640px;

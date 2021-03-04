@@ -101,7 +101,6 @@ export default function App() {
               url={videoCurrent.Link}
               controls={true}
               playsinline={true}
-              height={"100%"}
           />
       </div>
       <div id="ContactContainer">
