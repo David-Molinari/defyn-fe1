@@ -130,7 +130,7 @@ iframe {
     width: 100%;
   }
 }
-iframe {
+/* iframe {
   animation-name: makeFatter;
   animation-duration: .1s;
   animation-delay: -.5s;
@@ -141,8 +141,8 @@ iframe {
   }
   100% {
     width: 100%;
-  }
-}
+  } 
+} */
 @media only screen and (max-width: 655px) {
   #SelectInputContainer, #ContactContainer {
     width: 95vw !important;
