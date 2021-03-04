@@ -79,10 +79,6 @@ export default function App() {
       }
   }
 
-  function videoLoaded() {
-    console.log('ready')
-  }
-
   return (
     <div id="AppContainer">
       <div id="SelectInputContainer">
@@ -103,7 +99,6 @@ export default function App() {
             url={videoCurrent.Link}
             controls={true}
             playsinline={true}
-            onReady={videoLoaded()}
         />
       </div>
       <div id="ContactContainer">
