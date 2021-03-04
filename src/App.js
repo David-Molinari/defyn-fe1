@@ -19,8 +19,6 @@ export default function App() {
     Name: ""
   })
 
-  const [videoReady, setVideoReady] = useState(false)
-
   let url = window.location.href.slice(
     (window.location.href.search("/") + 2), -1
   )
@@ -81,6 +79,10 @@ export default function App() {
       }
   }
 
+  function videoLoaded() {
+    console.log('ready')
+  }
+
   return (
     <div id="AppContainer">
       <div id="SelectInputContainer">
@@ -96,12 +98,13 @@ export default function App() {
         />
       </div>
       <div id="VideoContainer">
-          <ReactPlayer
-              key={videoCurrent.Name}
-              url={videoCurrent.Link}
-              controls={true}
-              playsinline={true}
-          />
+        <ReactPlayer
+            key={videoCurrent.Name}
+            url={videoCurrent.Link}
+            controls={true}
+            playsinline={true}
+            onReady={videoLoaded()}
+        />
       </div>
       <div id="ContactContainer">
         <h3 id="CompanyEmail">{company.Contact}</h3>
