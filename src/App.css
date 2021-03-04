@@ -1,6 +1,6 @@
 #AppContainer {
   width: 100%;
-  height: 92.5vh;
+  height: 92.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -138,8 +138,8 @@ iframe {
     margin: 0 2.5vw !important;
   }
 }
-@media only screen and (max-width: 455px) {
+@media only screen and (max-width: 955px) {
   #AppContainer {
-    height: 77.5vh !important;
+    height: 77.5% !important;
   }
 }
