@@ -91,7 +91,7 @@ iframe {
   -webkit-transform: translateY(-50%);
   -o-transform: translateY(-50%);
 }
-.player {
+iframe * {
   height: 100% !important;
 }
 #ContactContainer{
