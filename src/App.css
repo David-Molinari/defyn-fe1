@@ -1,6 +1,6 @@
 #AppContainer {
   width: 100%;
-  height: 100vh;
+  height: 92.5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -137,32 +137,9 @@ iframe {
     width: 95vw !important;
     margin: 0 2.5vw !important;
   }
-  /* #ContactContainer {
-    animation-duration: 2.5s;
-    animation-name: slidein-left1;
+}
+@media only screen and (max-width: 455px) {
+  #AppContainer {
+    height: 77.5vh !important;
   }
-  @keyframes slidein-left1 {
-    from {
-      margin-left: 500%;
-      width: 500%;
-    }
-    to {
-      margin-left: 0%;
-      width: 95vw;
-    }
-  }
-  #SelectInputContainer {
-    animation-duration: 2.5s;
-    animation-name: slidein-right1;
-  }
-  @keyframes slidein-right1 {
-    from {
-      margin-right: 500%;
-      width: -500%;
-    }
-    to {
-      margin-right: 0%;
-      width: 95vw;
-    }
-  } */
 }
