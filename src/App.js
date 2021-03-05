@@ -19,8 +19,15 @@ export default function App() {
     Name: ""
   })
 
+  const [rsValue, setRsValue] = useState("")
+
+  const [rsInputValue, setRsInputValue] = useState("")
+
+  const [searchingOptions, setSearchingOptions] = useState(false)
+
   let url = window.location.href.slice(
-    (window.location.href.search("/") + 2), -1
+    (window.location.href.search("/") + 2), 
+    -1
   )
 
   if (url == 'localhost:3000') {
@@ -38,8 +45,7 @@ export default function App() {
         setCompany(res.data[0])
         getVideos(res.data[0])
     })
-    .catch(err => {
-    })
+    .catch(err => {console.log(err)})
   }
 
   function getVideos(comp) {
@@ -51,9 +57,10 @@ export default function App() {
             Link: res.data[0].Link, 
             Name: res.data[0].Name
           })
+          setRsValue(res.data[0].Name)
+          setRsInputValue(res.data[0].Name)
       })
-      .catch(err => {
-      })
+      .catch(err => {console.log(err)})
   }
 
   function getOptions() {
@@ -67,16 +74,35 @@ export default function App() {
 
   async function handleChange(data) {
       let videoLink = await videos.find(
-        video => video.Name == data.value
-      ).Link
+          video => video.Name == data.value
+        ).Link
       try {
         setVideoCurrent({
           Link: videoLink, 
           Name: data.value
         })
+        setRsValue(data.value)
+        setRsInputValue(data.value)
+        setSearchingOptions(false)
       }
-      catch {
-      }
+      catch {console.log('error')}
+  }
+
+  function handleInputChange(data) {
+    setSearchingOptions(true)
+    setRsInputValue(data)
+  }
+
+  function optionFilter(data) {
+    let lcLabel = data.label.toLowerCase()
+    let lcRsIv = rsInputValue.toLowerCase()
+    if ((searchingOptions == false ||
+      lcLabel.search(lcRsIv) != -1) 
+      && rsInputValue.length != 0) {
+      return true
+    } else {
+      return false
+    }
   }
 
   return (
@@ -87,11 +113,15 @@ export default function App() {
           classNamePrefix="SelectInput"
           cacheOptions
           defaultOptions
-          value={videoCurrent.Name}
-          inputValue={videoCurrent.Name}
+          value={rsValue}
+          inputValue={rsInputValue}
           loadOptions={getOptions}
-          onChange={(data) => handleChange(data)}
+          onChange={(data)=> handleChange(data)}
+          onInputChange={(data)=> handleInputChange(data)}
           placeholder=""
+          onMenuClose={()=> setRsInputValue(rsValue)}
+          onMenuOpen={()=> setSearchingOptions(false)}
+          filterOption={(data)=> optionFilter(data)}
         />
       </div>
       <div id="VideoContainer">
