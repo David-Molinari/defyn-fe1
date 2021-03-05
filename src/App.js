@@ -85,6 +85,7 @@ export default function App() {
         <AsyncSelect
           className="SelectInput"
           classNamePrefix="SelectInput"
+          cacheOptions
           defaultOptions
           value={videoCurrent.Name}
           inputValue={videoCurrent.Name}
