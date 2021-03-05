@@ -9,7 +9,6 @@
     "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-driftjs": "^1.1.11",
     "react-player": "^2.9.0",
     "react-scripts": "4.0.2",
     "react-select": "^4.1.0",
