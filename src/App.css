@@ -1,6 +1,6 @@
 #AppContainer {
   width: 100%;
-  height: 92.5vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -13,7 +13,7 @@
 }
 #SelectInputContainer{
   width: 100%;
-  max-width: 640px;
+  max-width: 635px;
   margin: 0;
   display: flex;
   justify-content: flex-start;
@@ -87,11 +87,12 @@ iframe {
   transition: 3s;
 }
 #ContactContainer{
+  height: 28px;
   width: 100%;
-  max-width: 640px;
   margin: 0;
   display: flex;
   justify-content: flex-end;
+  max-width: 635px;
 }
 #CompanyEmail {
   margin: 0;
@@ -131,7 +132,7 @@ iframe {
     margin: 0 2.5vw !important;
   }
 }
-@media only screen and (max-width: 855px) {
+/* @media only screen and (max-width: 855px) {
   #AppContainer {
     height: 87.5vh !important;
   }
@@ -150,4 +151,4 @@ iframe {
   #AppContainer {
     height: 72.5vh !important;
   }
-}
+} */
